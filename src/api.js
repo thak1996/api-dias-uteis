@@ -1,20 +1,18 @@
 const express = require('express');
 const axios = require('axios');
+const serverless = require('serverless-http');
+
 const app = express();
-const PORT = 443;
+const router = express.Router();
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended : false }));
 
-app.listen(PORT, () => {
-    console.log("listening.")
-});
-
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.status(200).send("API is running.");
 })
 
-app.get('/:year/:month', async (req, res) => {
+router.get('/:year/:month', async (req, res) => {
     const year = req.params.year;
     const month = req.params.month - 1;
 
@@ -49,3 +47,7 @@ app.get('/:year/:month', async (req, res) => {
             diasUteis: diasUteis,
         });    
 })
+
+app.use('/.netlify/functions/api', router);
+
+module.exports.handler = serverless(app);
