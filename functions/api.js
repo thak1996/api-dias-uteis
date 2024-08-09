@@ -58,7 +58,7 @@ function getMonthInfo(month, year, response) {
 }
 
 router.get('/', (req, res) => {
-    res.status(200).send("API is running.");
+    res.status(200).send("API is running. You can use 'URL/{year}' to find the working days data from the specified year, or 'URL/{year}/{month}' to find the data from a specific year's month.");
 })
 
 router.get('/:year/:month', async (req, res) => {
