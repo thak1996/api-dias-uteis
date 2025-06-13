@@ -58,7 +58,7 @@ function getMonthInfo(month, year, response) {
 }
 
 router.get('/', (req, res) => {
-    res.status(200).send('API is running. See <a href="https://github.com/NathamFernandes/api-dias-uteis">github.com/NathamFernandes/api-dias-uteis</a> for more info.');
+    res.status(200).send('API is running.');
 })
 
 router.get('/:year/:month', async (req, res) => {
