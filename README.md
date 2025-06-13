@@ -2,11 +2,16 @@
 
 [api-dias-uteis.netlify.app](https://api-weekdays.netlify.app/.netlify/functions/api/)
 
-# Install
+### Install
+
 npm install -g netlify-cli
-# Login 
+
+### Login
+
 npm install -g netlify-cli
-# Deploy 
+
+### Deploy
+
 netlify deploy --prod
 
 ### Endpoints
